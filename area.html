@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mb{
+            margin-bottom: 20px;
+        }
+        #r{
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Area Calculator</h1>
+    <div class="mb">
+        <span>Result :</span><span id="r"></span>
+        <button id="clear">Clear</button>
+        <button id="store">Store</button>
+    </div>
+    <input type="text" name="" id="w" placeholder="Input Width">
+    <input type="text" name="" id="b"
+    placeholder="Input Breadth">
+    <button id="btn">calculate</button>
+    <ul id="rs"></ul>
+    
+
+
+    <script>
+
+        // const a=(w,b) =>{
+        //   const result=  (w*b)+"sqft";
+        //   console.log(result);
+        // //   
+        // };
+const w=document.getElementById("w");
+const b=document.getElementById("b");
+const btn=document.getElementById("btn");
+const r=document.getElementById("r");
+const clear=document.getElementById("clear");
+const store=document.getElementById("store");
+const rs=document.getElementById("rs");
+
+
+
+btn.onclick =() =>{
+          const result=  (w.value*b.value)+"sqft";
+         r.innerText=`${w.value}ft *${b.value}ft=${result}`;
+         w.value=b.value=null;
+        //   
+        };
+
+clear.onclick=()=>{
+    r.innerText="";
+}
+store.onclick=()=>{
+    rs.innerHTML+=`<li>${r.innerText}</li>`;
+    r.innerText=null;
+}
+    </script>
+</body>
+</html>
